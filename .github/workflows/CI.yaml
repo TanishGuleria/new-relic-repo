@@ -1,0 +1,21 @@
+name: Cloud Service CI Workflow
+on:
+  workflow_dispatch:
+  push:
+    branch:
+      - main
+      - develop
+      - feature/*
+  
+  Jobs:
+    CI:
+      run-on: ubuntu-latest
+      uses: TanishGuleria/new-relic-reusable-flow/.github/workflows/CI-reusable.yaml@main 
+      secrects:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        dummy_input: "dummy-input-value"
+
+
+
+  

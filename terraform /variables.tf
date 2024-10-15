@@ -1,0 +1,21 @@
+variable "account_parameters_store_region" {
+  default = "us-east-1"
+  type    = string
+}
+
+variable "region" {
+  description = "The deployment region"
+  type        = string
+  default     = "eu-west-1"
+}
+
+variable "tag_origin" {
+  description = "Set by the script"
+  type        = string
+}
+
+variable "app_name" {
+  description = "The name of the application"
+  type        = string
+  default     = "new-relic-cloud-app"
+}
