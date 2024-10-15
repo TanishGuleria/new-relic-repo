@@ -12,7 +12,7 @@ jobs:
     run-on: ubuntu-latest
     uses: TanishGuleria/new-relic-reusable-flow/.github/workflows/CI-reusable.yaml@main 
     secrects:
-      GITHUB_TOKEN: ${{ secrets.TOKEN }}
+      PAT_TOKEN: ${{ secrets.TOKEN }}
     with:
       dummy_input: "dummy-input-value"
 
