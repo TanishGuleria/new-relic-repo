@@ -7,14 +7,14 @@ on:
       - develop
       - feature/*
   
-  Jobs:
-    CI:
-      run-on: ubuntu-latest
-      uses: TanishGuleria/new-relic-reusable-flow/.github/workflows/CI-reusable.yaml@main 
-      secrects:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        dummy_input: "dummy-input-value"
+jobs:
+  CI:
+    run-on: ubuntu-latest
+    uses: TanishGuleria/new-relic-reusable-flow/.github/workflows/CI-reusable.yaml@main 
+    secrects:
+      GITHUB_TOKEN: ${{ secrets.TOKEN }}
+    with:
+      dummy_input: "dummy-input-value"
 
 
 
