@@ -18,14 +18,6 @@ resource "aws_s3_bucket" "bucket" {
     enabled = true
   }
 
-  lifecycle_rule {
-    id      = "lifecycle_rule_${random_string.id.result}"
-    enabled = var.lifecycle_rule_enabled
-
-    expiration {
-      days = var.expiration_days
-    }
-  }
 
   server_side_encryption_configuration {
     rule {

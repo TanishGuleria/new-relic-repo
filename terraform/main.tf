@@ -14,7 +14,6 @@ module "s3_bucket" {
 
   region = data.aws_region.current.name
   app_name = var.app_name
-  lifecycle_rule_enabled = true
 
 }
 

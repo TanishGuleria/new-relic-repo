@@ -12,16 +12,6 @@ variable "allow_force_destroy" {
   default     = false
 }
 
-variable "lifecycle_rule_enabled" {
-  description = "Enable lifecycle expiry on this bucket"
-  default     = "false"
-}
-
-variable "expiration_days" {
-  description = "Number of days after which to expunge the object"
-  default     = 365
-}
-
 variable "encryption" {
   description = "The stype of encryption to force for objects"
   default     = "AES256"
