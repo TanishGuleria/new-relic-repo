@@ -9,9 +9,8 @@ on:
   
 jobs:
   CI:
-    run-on: ubuntu-latest
     uses: TanishGuleria/new-relic-reusable-flow/.github/workflows/CI-reusable.yaml@main 
-    secrects:
+    secrets:
       PAT_TOKEN: ${{ secrets.TOKEN }}
     with:
       dummy_input: "dummy-input-value"
