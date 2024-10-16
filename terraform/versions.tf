@@ -1,16 +1,10 @@
 locals {
   common_tags = {
     Application  = var.app_name
-    BusinessUnit = "CPG"
-    Origin       = var.tag_origin
-    OwnerEmail   = "cre@sophos.com"
-    Project      = "team-name-project"
-    Function     = "team-name-function"
-    Team         = "cre"
+    OwnerEmail   = "tsg@gmail.com"
   }
 }
 
-# TODO: Move to terraform version pin
 terraform {
   backend "s3" {}
   required_providers {

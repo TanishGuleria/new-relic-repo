@@ -9,11 +9,6 @@ variable "region" {
   default     = "eu-west-1"
 }
 
-variable "tag_origin" {
-  description = "Set by the script"
-  type        = string
-}
-
 variable "app_name" {
   description = "The name of the application"
   type        = string
