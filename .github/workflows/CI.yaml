@@ -14,7 +14,3 @@ jobs:
       PAT_TOKEN: ${{ secrets.TOKEN }}
     with:
       dummy_input: "dummy-input-value"
-
-
-
-  

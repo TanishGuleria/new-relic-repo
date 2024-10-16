@@ -1,0 +1,32 @@
+name: Cloud Service CD Workflow
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy the team-onboarding to'
+        required: true
+        type: choice
+        options:
+          - inf
+          - dev
+          - qa
+          - prod
+          - all
+      branch:
+        description: 'Branch to deploy the Service Terraform code from'
+        required: true
+        default: 'main'
+        type: string
+
+jobs:
+  uses: TanishGuleria/new-relic-reusable-flow/.github/workflows/CD-reusable.yaml@main
+  secrets:
+    # Add secrects to repo secrect for different environments eg : - 
+    #inf_AWS_ACCESS_KEY_ID, inf_AWS_SECRET_ACCESS_KEY
+    AWS_ACCESS_KEY_ID: ${{ secrets.${{ inputs.environment }}_AWS_ACCESS_KEY_ID }}
+    AWS_SECRET_ACCESS_KEY: ${{ secrets.${{ inputs.environment }}_AWS_SECRET_ACCESS_KEY }}
+    PAT_TOKEN: ${{ secrets.TOKEN }}
+  with:
+    branch: ${{ inputs.branch }}
+    environment: ${{ inputs.environment }}
+  
