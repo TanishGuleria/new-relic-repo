@@ -17,6 +17,10 @@ on:
         required: true
         default: 'main'
         type: string
+      target_deploy:
+        description: 'Target deploy to specific Environment for Hotfix'
+        required: true
+        type: boolean
 
 jobs:
   CD:
@@ -30,4 +34,5 @@ jobs:
     with:
       branch: ${{ inputs.branch }}
       environment: ${{ inputs.environment }}
+      target_deploy: ${{ inputs.target_deploy }}
   
