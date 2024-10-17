@@ -25,6 +25,18 @@ jobs:
   CD:
     uses: TanishGuleria/new-relic-reusable-flow/.github/workflows/CD-reusable.yaml@main
     secrets:
+      # Could be imporoved by using a common secrect vault eg : hashicopvault
+      # for now using repo secrect 
+      # Add secrects to repo secrect for different environments eg : - 
+      #inf_AWS_ACCESS_KEY_ID, inf_AWS_SECRET_ACCESS_KEY
+      inf_AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      inf_AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      dev_AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      dev_AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      qa_AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      qa_AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      prod_AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      prod_AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       PAT_TOKEN: ${{ secrets.TOKEN }}
     with:
       branch: ${{ inputs.branch }}
