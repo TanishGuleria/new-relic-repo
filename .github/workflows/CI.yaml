@@ -18,7 +18,7 @@ jobs:
   
   Trigger-CD:
     needs: CI
-    runs-on: ubuntu-latest  # Add this to specify the runner
+    runs-on: ubuntu-latest 
     steps:
       - name: Trigger CD 
         uses: actions/github-script@v7
