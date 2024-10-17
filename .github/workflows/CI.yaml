@@ -13,4 +13,5 @@ jobs:
     secrets:
       PAT_TOKEN: ${{ secrets.TOKEN }}
     with:
-      dummy_input: "dummy-input-value"
+      container_port: 5000
+      app_name: "new-relic-cloud-app"

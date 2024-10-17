@@ -16,7 +16,7 @@ module "vpc" {
 }
 
 resource "aws_security_group" "ecs_sg" {
-  vpc_id = data.aws_vpc.existing.id
+  vpc_id = module.vpc.vpc_id
   name   = "ecs-security-group"
   ingress {
     from_port   = local.container_config.host_port
