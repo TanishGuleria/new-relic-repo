@@ -16,14 +16,14 @@ jobs:
       container_port: 5000
       app_name: "new-relic-cloud-app"
   
-  Auto-CD:
+  Trigger-CD:
     needs: CI
     runs-on: ubuntu-latest  # Add this to specify the runner
     steps:
       - name: Trigger CD 
         uses: actions/github-script@v5
         with:
-          github-token: ${{ secrets.PAT_TOKEN }}
+          github-token: ${{ secrets.TOKEN }}
           script: |
             const branchName = context.ref.replace('refs/heads/', '');
             
