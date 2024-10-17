@@ -2,14 +2,12 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      configuration_aliases = [aws.parameters]
       version = "~> 5.57.0"
     }
   }
 
   required_version = ">= 1.9.7"
 }
-
 
 #We can also have a common place to set provider version 
 # module "aws_module_version_pin" {
