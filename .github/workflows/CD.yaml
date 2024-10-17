@@ -16,8 +16,8 @@ on:
         required: true
         type: choice
         options:
-          - no
-          - yes
+          - NO
+          - YES
 
 jobs:
   CD:
