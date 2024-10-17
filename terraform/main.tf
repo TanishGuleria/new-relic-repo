@@ -10,6 +10,12 @@ locals {
     name          = "my_app-container"
   }
 }
+
+module "service_role" {
+  source = "./modules/iam-role"
+  app_name = var.app_name
+}
+
 module "vpc" {
   source = "./modules/vpc"
   app_name = var.app_name
@@ -38,6 +44,6 @@ module "ecs_service" {
   app_name  = var.app_name
   subnets_ids = module.vpc.public_subnet_ids
   container_config = local.container_config
-  execution_role_arn = "" //not needed for now 
+  execution_role_arn = module.service_role.role_arn
   security_groups_ids = [aws_security_group.ecs_sg.id]
 }
