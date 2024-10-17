@@ -18,6 +18,13 @@ on:
         options:
           - NO
           - YES
+      targeted_deploy:
+        description: 'Target deploy to specific Environment for Hotfix'
+        required: true
+        type: choice
+        options:
+          - no
+          - yes
 
 jobs:
   CD:
