@@ -39,5 +39,5 @@ jobs:
     with:
       branch: ${{ github.ref_name }} 
       environment: ${{ inputs.environment }}
-      target_deploy: ${{ inputs.target_deploy }}
+      target_deploy: ${{ inputs.targeted_deploy }}
   
