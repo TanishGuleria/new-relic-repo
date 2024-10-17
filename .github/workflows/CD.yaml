@@ -14,7 +14,10 @@ on:
       target_deploy:
         description: 'Target deploy to specific Environment for Hotfix'
         required: true
-        type: boolean
+        type: choice
+        options:
+          - no
+          - yes
 
 jobs:
   CD:
