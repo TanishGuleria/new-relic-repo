@@ -6,7 +6,7 @@ locals {
     container_port = 5000
     host_port     = 5000
     protocol      = "tcp"
-    image         = "public.ecr.aws/999999999/my_app:latest"
+    image         = "artifactory.tanish-guleria.com/${var.app_name}:${var.image_tag}"
     name          = "my_app-container"
   }
 }

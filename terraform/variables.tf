@@ -14,3 +14,8 @@ variable "app_name" {
   type        = string
   default     = "new-relic-cloud-app"
 }
+
+variable "image_tag" {
+  description = "image tag"
+  type        = string
+}
