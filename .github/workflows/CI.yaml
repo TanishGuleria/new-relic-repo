@@ -34,6 +34,6 @@ jobs:
               ref: branchName,  // Use the extracted branch name
               inputs: {
                 environment: 'inf',
-                target_deploy: 'no',
+                target_deploy: 'false',
               }
             });

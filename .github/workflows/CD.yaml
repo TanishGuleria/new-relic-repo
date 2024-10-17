@@ -11,20 +11,13 @@ on:
           - dev
           - qa
           - prod
-      target_deploy:
-        description: 'Target deploy to specific Environment for Hotfix'
-        required: true
-        type: choice
-        options:
-          - NO
-          - YES
       targeted_deploy:
         description: 'Target deploy to specific Environment for Hotfix'
         required: true
         type: choice
         options:
-          - no
-          - yes
+          - false
+          - true
 
 jobs:
   CD:
