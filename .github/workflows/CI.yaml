@@ -15,3 +15,25 @@ jobs:
     with:
       container_port: 5000
       app_name: "new-relic-cloud-app"
+  
+  Auto-CD:
+    needs: CI
+    runs-on: ubuntu-latest  # Add this to specify the runner
+    steps:
+      - name: Trigger CD 
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ secrets.PAT_TOKEN }}
+          script: |
+            const branchName = context.ref.replace('refs/heads/', '');
+            
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo, 
+              workflow_id: 'CD.yaml', 
+              ref: branchName,  // Use the extracted branch name
+              inputs: {
+                environment: 'inf',
+                target_deploy: 'no',
+              }
+            });
