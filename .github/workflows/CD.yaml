@@ -11,11 +11,6 @@ on:
           - dev
           - qa
           - prod
-      branch:
-        description: 'Branch to deploy the Service Terraform code from'
-        required: true
-        default: 'main'
-        type: string
       target_deploy:
         description: 'Target deploy to specific Environment for Hotfix'
         required: true
@@ -39,7 +34,7 @@ jobs:
       prod_AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       PAT_TOKEN: ${{ secrets.TOKEN }}
     with:
-      branch: ${{ inputs.branch }}
+      branch: ${GITHUB_REF#refs/heads/}
       environment: ${{ inputs.environment }}
       target_deploy: ${{ inputs.target_deploy }}
   
