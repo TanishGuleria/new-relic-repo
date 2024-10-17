@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest  # Add this to specify the runner
     steps:
       - name: Trigger CD 
-        uses: actions/github-script@v5
+        uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.TOKEN }}
           script: |
